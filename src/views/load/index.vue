@@ -1,6 +1,12 @@
 <template>
   <div style="margin-left: 20px;margin-right: 20px;">
-    <h1>负载均衡方法</h1>
+    <div style="position: relative;top: 0px;left: 0px">
+      <h1>负载均衡方法</h1>
+      <div style="position: absolute;top: 0px;right:10px;height:100%;vertical-align: center">
+        <el-button type="text" @click="goConfig">去配置 <i class="iconfont">&#xe662;</i></el-button>
+      </div>
+    </div>
+
     <p>随着访问量的上升，当一台服务器难以胜任是，就必须采用<b>负载均衡技术</b>，将大量的访问合理地分配至多台服务器上。</p>
     <el-divider></el-divider>
     <div style="margin-left: 20px;">
@@ -59,6 +65,17 @@ export default {
      */
     goAnchor(value){
       document.querySelector("#"+value).scrollIntoView(true);
+    },
+
+    /**
+     * @Description: 跳转到配置页面
+     * @param:
+     * @return
+     */
+    goConfig(){
+      this.$router.push({
+        path:'/load/config'
+      });
     }
   }
 }

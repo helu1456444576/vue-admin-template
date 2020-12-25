@@ -1,6 +1,11 @@
 <template>
   <div style="margin-left: 20px;margin-right: 20px;">
-    <h1>地址复用方法</h1>
+    <div style="position: relative;top: 0px;left: 0px">
+      <h1>地址复用方法</h1>
+      <div style="position: absolute;top: 0px;right:10px;height:100%;vertical-align: center">
+        <el-button type="text" @click="goConfig">去配置 <i class="iconfont">&#xe662;</i></el-button>
+      </div>
+    </div>
     <p>可将多个内部地址映射为一个合法公网地址，但以不同的协议<b>端口号</b>与不同的内部地址相对应，也就是与之间的转换</p>
     <el-divider></el-divider>
     <div style="margin-left: 20px;">
@@ -55,6 +60,17 @@ export default {
      */
     goAnchor(value){
       document.querySelector("#"+value).scrollIntoView(true);
+    },
+
+    /**
+     * @Description: 跳转到配置页面
+     * @param:
+     * @return
+     */
+    goConfig(){
+      this.$router.push({
+        path:'/reuse/config'
+      });
     }
   }
 }

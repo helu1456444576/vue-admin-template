@@ -134,7 +134,7 @@ export const constantRoutes = [
   {
     path: '/reuse',
     component: Layout,
-    meta: { title: '地址复用', icon: 'link' },
+    meta: { title: '地址复用', icon: 'el-icon-s-check' },
     children: [
       {
         path: 'index',
@@ -153,6 +153,19 @@ export const constantRoutes = [
         name: 'reuse_test',
         component: () => import('@/views/reuse/subViews/test.vue'),
         meta: { title: '测试'}
+      }
+    ]
+  },
+  {
+    path: '/design',
+    component: Layout,
+    redirect: '/design',
+    children: [
+      {
+        path: '/design',
+        component: () => import('@/views/design/index'),
+        name: 'design',
+        meta: { title: '设计说明', icon: 'el-icon-s-opportunity' },
       }
     ]
   },

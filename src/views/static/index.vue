@@ -1,6 +1,12 @@
 <template>
     <div style="margin-left: 20px;margin-right: 20px;">
-      <h1>静态方法</h1>
+      <div style="position: relative;top: 0px;left: 0px">
+        <h1>静态方法</h1>
+        <div style="position: absolute;top: 0px;right:10px;height:100%;vertical-align: center">
+          <el-button type="text" @click="goConfig">去配置 <i class="iconfont">&#xe662;</i></el-button>
+        </div>
+      </div>
+
       <p>静态方法的含义是一个私有IP<b>固定</b>映射一个公有IP地址，提供内网服务器的对外访问服务</p>
       <el-divider></el-divider>
       <div style="margin-left: 20px;">
@@ -64,6 +70,17 @@
        */
        goAnchor(value){
          document.querySelector("#"+value).scrollIntoView(true);
+       },
+
+       /**
+        * @Description: 跳转到配置页面
+        * @param:
+        * @return
+       */
+      goConfig(){
+         this.$router.push({
+           path:'/static/config'
+         });
        }
     }
   }
