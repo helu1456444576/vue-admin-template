@@ -1,7 +1,7 @@
 <template>
   <div class="design-container">
-    <h1>telnet自动化</h1>
-    <p>telnet自动化系统旨在通过可视化的方式自动实现telnet的配置与通信</p>
+    <h1>NAT自动化配置系统</h1>
+    <p>NAT自动化配置系统旨在通过可视化的方式自动实现NAT配置与测试</p>
     <el-divider></el-divider>
     <div style="margin-left: 20px;">
       <div>
