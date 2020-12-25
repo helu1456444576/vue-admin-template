@@ -11,11 +11,30 @@
         </el-button>
       </el-col>
     </el-row>
-    <route-sub-view class='component-sub'
-                    rta="配置RTA"
-                    rtb="rtb"
-                    rtc="rtc">
-    </route-sub-view>
+    <el-row style="width:95%;margin-left: 35px;margin-top: 20px;">
+      <el-col :span="7">
+        <route-sub-view class='component-sub'
+                        name="配置路由RTA"
+                        if-show-detail="true"
+                        content="rta">
+        </route-sub-view>
+      </el-col>
+      <el-col :span="7" :offset="1">
+        <route-sub-view class='component-sub'
+                        name="配置路由RTB"
+                        if-show-detail="true"
+                        content="rtb">
+        </route-sub-view>
+      </el-col>
+      <el-col :span="7" :offset="1">
+        <route-sub-view class='component-sub'
+                        name="配置路由RTC"
+                        if-show-detail="true"
+                        content="rtc">
+        </route-sub-view>
+      </el-col>
+    </el-row>
+
 
   </div>
 </template>

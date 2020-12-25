@@ -32,7 +32,7 @@ ip nat pool globalXYZ 220.110.0.33 220.110.0.57 netmask 255.255.255.0
 ip nat inside source list 1 pool globalXYZ overload
                </pre>
             </el-card>
-            <div style="margin: 10px auto;width:80%">
+            <div style="margin: 10px auto;width:80%;line-height: 1.5">
               <p>为RTA配置动态NAT，RTA左侧的部分构成了一个子网也就是inside，RTA右侧的部分是outside。</p>
               <ul>
                 <li>不开启permit就是unreachable</li>

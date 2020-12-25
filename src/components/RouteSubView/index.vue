@@ -1,50 +1,20 @@
 <template>
   <div>
-    <el-row>
-      <el-col :span="7">
         <el-card shadow="hover">
           <div slot="header" class="clearfix">
-            <span>路由器RTA</span>
-            <el-button style="float: right; padding: 3px 0" type="text" @click="showDetail(1)">展开查看</el-button>
+            <span>{{name}}</span>
+            <el-button style="float: right; padding: 3px 0" type="text" @click="showDetail(1)" v-if="ifShowDetail">展开查看</el-button>
           </div>
           <div class="route-content">
-            {{rta}}
+            {{content}}
           </div>
-
         </el-card>
-      </el-col>
-      <el-col :span="7" :offset="1">
-        <el-card shadow="hover">
-          <div slot="header" class="clearfix">
-            <span>路由器RTB</span>
-            <el-button style="float: right; padding: 3px 0" type="text" @click="showDetail(2)">展开查看</el-button>
-          </div>
-          <div class="route-content">
-            {{rtb}}
-          </div>
-
-        </el-card>
-      </el-col>
-      <el-col :span="7" :offset="1">
-        <el-card shadow="hover">
-          <div slot="header" class="clearfix">
-            <span>路由器RTC</span>
-            <el-button style="float: right; padding: 3px 0" type="text" @click="showDetail(3)">展开查看</el-button>
-          </div>
-          <div class="route-content">
-            {{rtc}}
-          </div>
-
-        </el-card>
-      </el-col>
-    </el-row>
-
     <el-dialog
-      :title="routerTitle"
+      :title="name"
       :visible.sync="dialogVisible"
       width="50%">
       <div class="route-content">
-        {{detail}}
+        {{content}}
       </div>
       <span slot="footer" class="dialog-footer">
     <el-button type="primary" @click="dialogVisible = false">关闭</el-button>
@@ -59,24 +29,22 @@ import router from "@/router";
 export default {
   name: "RouteSubView",
   props: {
-    rta: {
+    name:{
+      type:String,
+      default:''
+    },
+    content: {
       type: String,
       default: ''
     },
-    rtb: {
-      type: String,
-      default: ''
-    },
-    rtc: {
-      type: String,
-      default: ''
+    ifShowDetail:{
+      type:Boolean,
+      default:true
     }
   },
   data(){
     return{
-      dialogVisible:false,
-      routerTitle:'',
-      detail:''
+      dialogVisible:false
     }
   },
   methods:{
@@ -85,26 +53,8 @@ export default {
      * @param:
      * @return
     */
-    showDetail(type){
-      switch (type){
-        case 1:
-          this.routerTitle='路由器RTA';
-          this.detail=this.rta;
-          break;
-        case 2:
-          this.routerTitle='路由器RTB';
-          this.detail=this.rtb;
-          break;
-        case 3:
-          this.routerTitle='路由器RTC';
-          this.detail=this.rtc;
-          break;
-        default:
-          break;
-      }
+    showDetail(){
       this.dialogVisible=true;
-
-
     }
   }
 }

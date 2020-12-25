@@ -11,11 +11,20 @@
         </el-button>
       </el-col>
     </el-row>
-    <route-sub-view class='component-sub'
-                    rta="RTA"
-                    rtb="rtb"
-                    rtc="rtc">
-    </route-sub-view>
+    <el-row style="width:80%;margin:20px auto;">
+      <el-col :span="11">
+        <route-sub-view class='component-sub'
+                        name="路由RTA"
+                        content="rta">
+        </route-sub-view>
+      </el-col>
+      <el-col :span="11" offset="1">
+        <route-sub-view class='component-sub'
+                        name="电脑PC1"
+                        content="pc1">
+        </route-sub-view>
+      </el-col>
+    </el-row>
 
   </div>
 </template>
