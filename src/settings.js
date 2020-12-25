@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: 'telnet自动化',
 
   /**
    * @type {boolean} true | false

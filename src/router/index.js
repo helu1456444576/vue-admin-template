@@ -57,49 +57,102 @@ export const constantRoutes = [
   {
     path: '/static',
     component: Layout,
+    meta: { title: '静态方法', icon: 'form' },
     children: [
       {
         path: 'index',
         name: 'static',
         component: () => import('@/views/static/index.vue'),
-        meta: { title: '静态方法', icon: 'form' }
+        meta: { title: '介绍'}
+      },
+      {
+        path: 'config',
+        name: 'static_config',
+        component: () => import('@/views/static/subViews/config.vue'),
+        meta: { title: '配置'}
+      },
+      {
+        path: 'test',
+        name: 'static_test',
+        component: () => import('@/views/static/subViews/test.vue'),
+        meta: { title: '测试'}
       }
     ]
   },
   {
     path: '/dynamic',
     component: Layout,
+    meta: { title: '动态方法', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'dynamic',
+        path: 'index',
         name: 'dynamic',
         component: () => import('@/views/dynamic/index'),
-        meta: { title: '动态方法', icon: 'el-icon-s-help' }
+        meta: { title: '介绍'}
+      },
+      {
+        path: 'config',
+        name: 'dynamic_config',
+        component: () => import('@/views/dynamic/subViews/config.vue'),
+        meta: { title: '配置'}
+      },
+      {
+        path: 'test',
+        name: 'dynamic_test',
+        component: () => import('@/views/dynamic/subViews/test.vue'),
+        meta: { title: '测试'}
       }
     ]
   },
   {
     path: '/load',
     component: Layout,
+    meta: { title: '负载均衡', icon: 'nested'},
     children: [
       {
-        path: 'load',
+        path: 'index',
         component: () => import('@/views/load/index'),
         name: 'load',
-        meta: { title: '负载均衡', icon: 'nested'},
+        meta: { title: '介绍'},
+      },
+      {
+        path: 'config',
+        name: 'load_config',
+        component: () => import('@/views/load/subViews/config.vue'),
+        meta: { title: '配置'}
+      },
+      {
+        path: 'test',
+        name: 'load_test',
+        component: () => import('@/views/load/subViews/test.vue'),
+        meta: { title: '测试'}
       }
+
     ]
   },
 
   {
     path: '/reuse',
     component: Layout,
+    meta: { title: '地址复用', icon: 'link' },
     children: [
       {
-        path: 'reuse',
+        path: 'index',
         component: () => import('@/views/reuse/index'),
         name: 'reuse',
-        meta: { title: '地址复用', icon: 'link' }
+        meta: { title: '介绍'}
+      },
+      {
+        path: 'config',
+        name: 'reuse_config',
+        component: () => import('@/views/reuse/subViews/config.vue'),
+        meta: { title: '配置'}
+      },
+      {
+        path: 'test',
+        name: 'reuse_test',
+        component: () => import('@/views/reuse/subViews/test.vue'),
+        meta: { title: '测试'}
       }
     ]
   },
