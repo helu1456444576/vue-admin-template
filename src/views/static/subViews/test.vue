@@ -15,13 +15,13 @@
       <el-col :span="11">
         <route-sub-view class='component-sub'
                         name="路由RTA"
-                        content="rta">
+                        :content="rta">
         </route-sub-view>
       </el-col>
       <el-col :span="11" offset="1">
         <route-sub-view class='component-sub'
                         name="电脑PC1"
-                        content="pc1">
+                        :content="pc1">
         </route-sub-view>
       </el-col>
     </el-row>
@@ -37,6 +37,12 @@ import {startTest} from "@/api/static";
 export default {
   name: "test",
   components:{RouteSubView},
+  data(){
+    return{
+      rta:'无',
+      pc1:"无"
+    }
+  },
   methods:{
     /**
      * @Description:跳转到说明页面
@@ -59,10 +65,9 @@ export default {
     startTest(){
       startTest().then(res=>{
         this.$message.success("访问成功！")
-        console.log(res);
+        this.rta=res.msg;
       }).catch(err=>{
         this.$message.error("访问失败！")
-        console.log(err.response);
       })
     }
   },

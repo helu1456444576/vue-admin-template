@@ -16,21 +16,21 @@
         <route-sub-view class='component-sub'
                         name="配置路由RTA"
                         if-show-detail="true"
-                        content="rta">
+                        :content="rta">
         </route-sub-view>
       </el-col>
       <el-col :span="7" :offset="1">
         <route-sub-view class='component-sub'
                         name="配置路由RTB"
                         if-show-detail="true"
-                        content="rtb">
+                        :content="rtb">
         </route-sub-view>
       </el-col>
       <el-col :span="7" :offset="1">
         <route-sub-view class='component-sub'
                         name="配置路由RTC"
                         if-show-detail="true"
-                        content="rtc">
+                        :content="rtc">
         </route-sub-view>
       </el-col>
     </el-row>
@@ -45,6 +45,13 @@ import {startConfig} from "@/api/reuse";
 export default {
   name: "config",
   components:{RouteSubView},
+  data(){
+    return{
+      rta:'无',
+      rtb:"无",
+      rtc:"无"
+    }
+  },
   methods:{
     /**
      * @Description:跳转到配置说明页面
@@ -68,6 +75,7 @@ export default {
     startNatConfig(){
       startConfig().then(res=>{
         this.$message.success("访问成功！")
+        this.rta=res.msg
         console.log(res);
       }).catch(err=>{
         this.$message.error("访问失败！")

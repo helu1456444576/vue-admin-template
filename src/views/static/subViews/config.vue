@@ -16,7 +16,7 @@
         <route-sub-view class='component-sub'
                         name="配置路由RTA"
                         if-show-detail="true"
-                        content="rta">
+                        :content="rta">
         </route-sub-view>
       </el-col>
       <el-col :span="7" :offset="1">
@@ -30,7 +30,7 @@
         <route-sub-view class='component-sub'
                         name="配置路由RTC"
                         if-show-detail="true"
-                        content="rtc">
+                        :content="rtc">
         </route-sub-view>
       </el-col>
     </el-row>
@@ -49,7 +49,9 @@ export default {
   components:{RouteSubView},
   data(){
     return{
-      rtb:""
+      rta:'无',
+      rtb:"无",
+      rtc:"无"
     }
   },
   methods:{

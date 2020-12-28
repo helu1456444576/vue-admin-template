@@ -2,7 +2,7 @@
   <div>
     <el-row style="margin-left: 20px;margin-right: 20px;margin-top:20px">
       <el-col :span="12">
-        <el-button type="primary"  style="float:left">开始测试</el-button>
+        <el-button type="primary"  style="float:left" @click="startTest">开始测试</el-button>
       </el-col>
       <el-col :span="12" style="text-align:center">
         <el-button type="text"  style="float:right" @click="toHelp">
@@ -15,13 +15,13 @@
       <el-col :span="11">
         <route-sub-view class='component-sub'
                         name="路由RTA"
-                        content="rta">
+                        :content="rta">
         </route-sub-view>
       </el-col>
       <el-col :span="11" offset="1">
         <route-sub-view class='component-sub'
                         name="电脑PC1"
-                        content="pc1">
+                        :content="pc1">
         </route-sub-view>
       </el-col>
     </el-row>
@@ -36,6 +36,12 @@ import {startTest} from "@/api/load";
 export default {
   name: "test",
   components:{RouteSubView},
+  data(){
+    return{
+      pc1:'无',
+      rta:'无'
+    }
+  },
   methods:{
     /**
      * @Description:跳转到说明页面
@@ -58,6 +64,7 @@ export default {
     startTest(){
       startTest().then(res=>{
         this.$message.success("访问成功！")
+        this.pc1=res.msg;
         console.log(res);
       }).catch(err=>{
         this.$message.error("访问失败！")

@@ -64,5 +64,6 @@ export default {
 .route-content{
   background: rgba(229, 233, 242,0.5);
   height: 400px;
+  padding: 15px;
 }
 </style>
