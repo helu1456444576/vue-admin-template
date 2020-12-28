@@ -23,7 +23,7 @@
         <route-sub-view class='component-sub'
                         name="配置路由RTB"
                         if-show-detail="true"
-                        content="rtb">
+                        :content="rtb">
         </route-sub-view>
       </el-col>
       <el-col :span="7" :offset="1">
@@ -47,6 +47,11 @@ import {startConfig} from "@/api/static";
 export default {
   name: "config",
   components:{RouteSubView},
+  data(){
+    return{
+      rtb:""
+    }
+  },
   methods:{
     /**
      * @Description:跳转到配置说明页面
@@ -70,10 +75,10 @@ export default {
     startNatConfig(){
       startConfig().then(res=>{
         this.$message.success("访问成功！")
-        console.log(res);
+        this.rtb=res.msg;
+
       }).catch(err=>{
         this.$message.error("访问失败！")
-        console.log(err.response);
       })
     },
 
