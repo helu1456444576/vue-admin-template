@@ -6,7 +6,13 @@
             <el-button style="float: right; padding: 3px 0" type="text" @click="showDetail(1)" v-if="ifShowDetail">展开查看</el-button>
           </div>
           <div class="route-content">
-            {{content}}
+<pre>
+  <code>
+{{content}}
+  </code>
+
+</pre>
+
           </div>
         </el-card>
     <el-dialog
@@ -14,7 +20,11 @@
       :visible.sync="dialogVisible"
       width="50%">
       <div class="route-content">
-        {{content}}
+<pre>
+ <code>
+ {{content}}
+  </code>
+</pre>
       </div>
       <span slot="footer" class="dialog-footer">
     <el-button type="primary" @click="dialogVisible = false">关闭</el-button>
@@ -64,6 +74,10 @@ export default {
 .route-content{
   background: rgba(229, 233, 242,0.5);
   height: 400px;
-  padding: 15px;
+  padding: 10px;
+}
+
+pre{
+  margin: 0px;
 }
 </style>
