@@ -23,7 +23,7 @@
 <pre>
  <code>
  {{content}}
-  </code>
+ </code>
 </pre>
       </div>
       <span slot="footer" class="dialog-footer">

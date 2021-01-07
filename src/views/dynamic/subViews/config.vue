@@ -41,6 +41,7 @@
 
 import RouteSubView from '@/components/RouteSubView'
 import {startConfig} from "@/api/dynamic";
+import {Loading} from 'element-ui'
 
 export default {
   name: "config",
@@ -73,12 +74,18 @@ export default {
      * @return
     */
     startNatConfig(){
+      const loadingInstance=Loading.service({
+        text: '配置中',
+        target:document.querySelector('.box')
+      });
       startConfig().then(res=>{
         this.$message.success("访问成功！")
         this.rta=res.msg;
       }).catch(err=>{
         this.$message.error("访问失败！")
         console.log(err.response);
+      }).finally(()=>{
+        loadingInstance.close();
       })
     },
 

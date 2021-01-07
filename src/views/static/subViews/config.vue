@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <el-row style="margin-left: 20px;margin-right: 20px;margin-top:20px">
       <el-col :span="12">
           <el-button type="primary"  @click="startNatConfig">开始配置</el-button>
@@ -12,27 +12,27 @@
       </el-col>
     </el-row>
     <el-row style="width:95%;margin-left: 35px;margin-top: 20px;">
-      <el-col :span="7">
-        <route-sub-view class='component-sub'
-                        name="配置路由RTA"
-                        if-show-detail="true"
-                        :content="rta">
-        </route-sub-view>
-      </el-col>
-      <el-col :span="7" :offset="1">
+<!--      <el-col :span="7">-->
+<!--        <route-sub-view class='component-sub'-->
+<!--                        name="配置路由RTA"-->
+<!--                        if-show-detail="true"-->
+<!--                        :content="rta">-->
+<!--        </route-sub-view>-->
+<!--      </el-col>-->
+      <el-col :span="15" :offset="4">
         <route-sub-view class='component-sub'
                         name="配置路由RTB"
                         if-show-detail="true"
                         :content="rtb">
         </route-sub-view>
       </el-col>
-      <el-col :span="7" :offset="1">
-        <route-sub-view class='component-sub'
-                        name="配置路由RTC"
-                        if-show-detail="true"
-                        :content="rtc">
-        </route-sub-view>
-      </el-col>
+<!--      <el-col :span="7" :offset="1">-->
+<!--        <route-sub-view class='component-sub'-->
+<!--                        name="配置路由RTC"-->
+<!--                        if-show-detail="true"-->
+<!--                        :content="rtc">-->
+<!--        </route-sub-view>-->
+<!--      </el-col>-->
     </el-row>
 
 
@@ -43,6 +43,7 @@
 
 import RouteSubView from '@/components/RouteSubView'
 import {startConfig} from "@/api/static";
+import {Loading} from 'element-ui'
 
 export default {
   name: "config",
@@ -75,12 +76,17 @@ export default {
      * @return
     */
     startNatConfig(){
+      const loadingInstance=Loading.service({
+        text: '配置中',
+        target:document.querySelector('.box')
+      });
       startConfig().then(res=>{
         this.$message.success("访问成功！")
         this.rtb=res.msg;
-
       }).catch(err=>{
         this.$message.error("访问失败！")
+      }).finally(()=>{
+        loadingInstance.close();
       })
     },
 

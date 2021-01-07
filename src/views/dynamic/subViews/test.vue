@@ -32,6 +32,7 @@
 
 import RouteSubView from '@/components/RouteSubView'
 import {startTest} from "@/api/dynamic";
+import {Loading} from 'element-ui'
 
 export default {
   name: "test",
@@ -62,6 +63,10 @@ export default {
      * @return
     */
     startTest(){
+      const loadingInstance=Loading.service({
+        text: '测试中',
+        target:document.querySelector('.box')
+      });
       startTest().then(res=>{
         this.$message.success("访问成功！")
         this.pc1=res.msg;
@@ -69,6 +74,8 @@ export default {
       }).catch(err=>{
         this.$message.error("访问失败！")
         console.log(err.response);
+      }).finally(()=>{
+        loadingInstance.close();
       })
     }
   },
