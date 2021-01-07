@@ -75,7 +75,7 @@ export default {
   background: rgba(229, 233, 242,0.5);
   height: 400px;
   padding: 10px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 pre{
