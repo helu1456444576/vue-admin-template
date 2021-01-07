@@ -12,13 +12,13 @@
       </el-col>
     </el-row>
     <el-row style="width:80%;margin:20px auto;">
-      <el-col :span="11">
-        <route-sub-view class='component-sub'
-                        name="路由RTA"
-                        :content="rta">
-        </route-sub-view>
-      </el-col>
-      <el-col :span="11" offset="1">
+<!--      <el-col :span="11">-->
+<!--        <route-sub-view class='component-sub'-->
+<!--                        name="路由RTA"-->
+<!--                        :content="rta">-->
+<!--        </route-sub-view>-->
+<!--      </el-col>-->
+      <el-col :span="15" offset="4">
         <route-sub-view class='component-sub'
                         name="电脑PC1"
                         :content="pc1">

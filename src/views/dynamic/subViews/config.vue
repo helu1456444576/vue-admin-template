@@ -12,27 +12,27 @@
       </el-col>
     </el-row>
     <el-row style="width:95%;margin-left: 35px;margin-top: 20px;">
-      <el-col :span="7">
+      <el-col :span="15" :offset="4">
         <route-sub-view class='component-sub'
                         name="配置路由RTA"
                         if-show-detail="true"
                         :content="rta">
         </route-sub-view>
       </el-col>
-      <el-col :span="7" :offset="1">
-        <route-sub-view class='component-sub'
-                        name="配置路由RTB"
-                        if-show-detail="true"
-                        :content="rtb">
-        </route-sub-view>
-      </el-col>
-      <el-col :span="7" :offset="1">
-        <route-sub-view class='component-sub'
-                        name="配置路由RTC"
-                        if-show-detail="true"
-                        :content="rtc">
-        </route-sub-view>
-      </el-col>
+<!--      <el-col :span="7" :offset="1">-->
+<!--        <route-sub-view class='component-sub'-->
+<!--                        name="配置路由RTB"-->
+<!--                        if-show-detail="true"-->
+<!--                        :content="rtb">-->
+<!--        </route-sub-view>-->
+<!--      </el-col>-->
+<!--      <el-col :span="7" :offset="1">-->
+<!--        <route-sub-view class='component-sub'-->
+<!--                        name="配置路由RTC"-->
+<!--                        if-show-detail="true"-->
+<!--                        :content="rtc">-->
+<!--        </route-sub-view>-->
+<!--      </el-col>-->
     </el-row>
   </div>
 </template>
