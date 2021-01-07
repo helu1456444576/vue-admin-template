@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <el-row style="margin-left: 20px;margin-right: 20px;margin-top:20px">
       <el-col :span="12">
         <el-button type="primary"  style="float:left" @click="startTest">开始测试</el-button>
